@@ -1,0 +1,23 @@
+h5{
+  font-weight: bolder!important;
+
+}
+
+p{
+  font-weight: lighter!important;
+  margin: 0!important;
+}
+
+p span{
+  font-weight: normal!important;
+}
+
+
+.listaH2{
+  color: white;
+  text-align: center;
+  background-color: rgba(0, 0, 0, .8);
+  padding: 10px;
+/*  text-transform: uppercase;*/
+font-family:serif;
+}
