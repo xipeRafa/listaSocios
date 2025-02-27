@@ -22,7 +22,7 @@ export const AuctionBody = () => {
   return (
     <div className="">
 
-        <h2 className='listaH2'>Lista de Solicitudes de Socios</h2>
+        <h2 className='listaH2'>Lista de Solicitudes de Inscripción</h2>
 
         <div className="row row-cols-1 row-cols-md-3 row-cols-lg-4 p-5 g-3 border mt-1">
 
