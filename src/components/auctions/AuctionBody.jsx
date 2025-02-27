@@ -1,14 +1,13 @@
 import { useContext, useState } from 'react';
 
-import { AddAuction } from './AddAuction';
 import { AuctionCard } from './AuctionCard';
 
 import { FireStoreDataContext } from '../../context/FireStoreDataContext';
-import { AuthContext } from '../../context/AuthContext';
+
 
 export const AuctionBody = () => {
   const { items } = useContext(FireStoreDataContext);
-  const { stateLogout } = useContext(AuthContext);
+
 
 
 

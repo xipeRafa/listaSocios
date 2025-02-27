@@ -27,16 +27,6 @@ export const AuctionCard = ({ item }) => {
 
   return (
     <div className="card shadow-sm " >
- {/*     <div
-        style={{
-          height: '180px',
-          backgroundImage: `url(${item.imgUrl})`,
-          backgroundSize: 'contain',
-          backgroundRepeat: 'no-repeat',
-          backgroundPosition: 'center',
-        }}
-        className="w-100 mt-4"
-      />*/}
 
       <div className="card-body p-4 ">
 
@@ -45,15 +35,9 @@ export const AuctionCard = ({ item }) => {
         <hr />
         <p>Nombre: <span>{item.nombre}</span></p>
 
-               <p>Correo: <span>{item.correo}</span></p>
-                      <p>Telefono: <span>{item.telefono}</span></p>
+        <p>Correo: <span>{item.correo}</span></p>
+        <p>Telefono: <span>{item.telefono}</span></p>
         
-       
-
-
-
-
-
 
         <hr/> 
 
@@ -62,7 +46,7 @@ export const AuctionCard = ({ item }) => {
           <button
             className="btn btn-danger mb-2 mt-2"
             onClick={() => {
-              if (window.confirm(`Quiere Borrar este Documento? ${item.name}`)) {
+              if (window.confirm(`Quiere Borrar este Socio? ${item.nombre}`)) {
                   deleteById(item.id);
                   setToggle(!toggle);
                 }

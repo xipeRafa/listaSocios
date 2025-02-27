@@ -58,24 +58,7 @@ console.log(items)
 
   //============================= images functions ===========================//
 
-  const postCollection = collection(firestoreDB, 'inventario');
 
-  const handleFileAdd = (selectedFile, postBody) => {
-    const filesFolderRef = ref(
-      storageDocs,
-      `projectFiles/${selectedFile?.name}`
-    );
-    uploadBytes(filesFolderRef, selectedFile)
-      .then(() => {
-        getDownloadURL(filesFolderRef).then((url) => {
-          postBody.imgName = selectedFile.name;
-          postBody.imgUrl = url;
-          addDoc(postCollection, postBody);
-          setToggle(!toggle);
-        });
-      })
-      .catch((error) => console.log(error));
-  };
 
   //============================= images functions end ===========================//
 
@@ -83,38 +66,17 @@ console.log(items)
     const aDoc = doc(firestoreDB, 'caza', id);
     try {
       await deleteDoc(aDoc);
-
-      // const desertRef = ref(storageDocs, `projectFiles/${imgName}`);
-
-      // deleteObject(desertRef)
-      //   .then(() => {
-      //     console.log(imgName, 'se elimino de Storage');
-      //   })
-      //   .catch((error) => {
-      //     console.log('ocurrio un error: ', error);
-      //   });
     } catch (error) {
       console.error(error);
     }
   };
 
-  const UpdateById = async (id, obj) => {
-    const aDoc = doc(firestoreDB, 'inventario', id);
-    try {
-      await updateDoc(aDoc, obj);
-    } catch (error) {
-      console.error(error);
-    }
-  };
 
   return (
     <FireStoreDataContext.Provider
       value={{
         items,
         deleteById,
-        UpdateById,
-        handleFileAdd,
-        postCollection,
         setToggle,
         toggle,
       }}
