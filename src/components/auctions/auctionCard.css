@@ -17,3 +17,8 @@ p span{
   padding: 10px;
   font-family:serif;
 }
+
+section{
+  text-align: center;
+  margin-top: 30px;
+}

@@ -33,6 +33,7 @@ export const AuctionCard = ({ item }) => {
         {/*<p>Creado: {  new Date(item.duration).toLocaleDateString("es-ES", {year: 'numeric', month: 'long', day: 'numeric'})}</p>*/}
         <p> {milisegundosComoFecha(item.idDate)}  </p>
         <hr />
+        <p> <span style={{color:'steelblue'}}>{item.ren ? 'RENOVACIÓN' : ''}</span></p>
         <p>Nombre: <span>{item.nombre}</span></p>
 
         <p>Correo: <span>{item.correo}</span></p>
@@ -52,7 +53,7 @@ export const AuctionCard = ({ item }) => {
                 }
               }}
         >
-          Borrar
+          {item.ren ? 'Borrar Renovación' : 'Borrar Solicitud'}
         </button>
 
     

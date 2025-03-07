@@ -6,7 +6,7 @@ import { FireStoreDataContext } from '../../context/FireStoreDataContext';
 
 
 export const AuctionBody = () => {
-  const { items } = useContext(FireStoreDataContext);
+  const { items, setToggle, toggle,} = useContext(FireStoreDataContext);
 
 
 
@@ -18,15 +18,29 @@ export const AuctionBody = () => {
 
           const [hmState, setHmState]=useState(true)
 
+          const [renState, setRenState]=useState(true)
+
+          const handlerStateRen =(params)=>{
+                setRenState(params) 
+                setToggle(!toggle)
+          }
 
   return (
     <div className="">
 
+      
+
         <h2 className='listaH2'>Lista de Solicitudes de Inscripción</h2>
 
-        <div className="row row-cols-1 row-cols-md-3 row-cols-lg-4 p-5 g-3 border mt-1">
 
-          {items.sort((a, b) => a.idDate - b.idDate)
+          <section>
+                <button className='buttonRen' onClick={()=>handlerStateRen(false)}>Solicitudes</button>
+                <button className='buttonRen' onClick={()=>handlerStateRen(true)}>Renovaciones</button>
+        </section>
+
+        <div className="row row-cols-1 row-cols-md-3 row-cols-lg-4 p-5 g-3 border">
+
+          {items.sort((a, b) => a.idDate - b.idDate).filter(el=>el.ren===renState)
 
 
 
